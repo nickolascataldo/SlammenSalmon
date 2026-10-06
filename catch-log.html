@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catch Log | Slammen Salmon</title>
+<meta name="description" content="Full-day guided drift boat salmon fishing on the Pere Marquette River in Branch, Michigan. Tuesdays and Thursdays, mid-September to mid-October. Two anglers per boat, lunch included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Slammen<span>Salmon</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catch-log.html" aria-current="page">Catch Log</a></li>
+      <li><a href="gear.html">Gear Guide</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+    <div class="nav-actions"><a class="avatar" href="profile.html" aria-label="Profile">SS</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow" style="color:#ffb596">Pere Marquette River · Branch, Michigan</p>
+    <h1>Drift the Pere Marquette for fall salmon.</h1>
+    <p>Full-day guided drift boat trips for Chinook salmon, rowed by a local guide through autumn color on one of Michigan's most storied rivers. Two anglers, lunch included.</p>
+    <div class="hero-cta">
+      <a class="btn btn-copper" href="#book">Book a Tour</a>
+      <a class="btn btn-secondary" href="catch-log.html">Start Logging Catches</a>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="section"><div class="container"><p class="eyebrow">Catch Log</p><h1>Your catches</h1>
+<div class="filters"><div><label for="q">Search</label><input type="text" id="q" placeholder="Search bait, notes…"></div>
+<div><label for="fSpecies">Species</label><select id="fSpecies"><option value="">All</option></select></div>
+<div><label for="fLoc">River / location</label><select id="fLoc"><option value="">All</option></select></div>
+<div><label for="fFrom">From</label><input type="date" id="fFrom"></div><div><label for="fTo">To</label><input type="date" id="fTo"></div></div>
+<div class="catch-grid" id="catchGrid"></div><p class="empty" id="empty" hidden>No catches match your filters.</p></div></section>
+<button class="fab" id="fab" aria-label="Log a new catch">+</button>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="modal-box"><h2 id="mTitle">Log a catch</h2><form id="catchForm">
+<label for="mPhoto">Photo</label><input type="file" id="mPhoto" accept="image/*">
+<label for="mSpecies">Species</label><input type="text" id="mSpecies" value="Chinook salmon" required>
+<label for="mLoc">River / location</label><input type="text" id="mLoc" value="Pere Marquette River" required>
+<div class="form-row"><div><label for="mWeight">Weight (lb)</label><input type="number" id="mWeight" step="0.1" min="0"></div><div><label for="mLen">Length (in)</label><input type="number" id="mLen" step="0.5" min="0"></div></div>
+<label for="mBait">Bait used</label><input type="text" id="mBait"><label for="mWhen">Date &amp; time</label><input type="datetime-local" id="mWhen" required>
+<p style="display:flex;gap:10px;margin-top:18px"><button class="btn btn-primary" type="submit">Save catch</button><button class="btn btn-secondary" type="button" id="mCancel">Cancel</button></p></form></div></div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a class="logo" href="index.html">Slammen<span>Salmon</span></a><p>Guided drift boat salmon tours on the Pere Marquette River, Branch, Michigan.</p></div>
+    <div><h3>Quick links</h3><ul><li><a href="index.html#book">Book a tour</a></li><li><a href="catch-log.html" aria-current="page">Catch Log</a></li><li><a href="gear.html">Gear Guide</a></li><li><a href="community.html">Community</a></li></ul></div>
+    <div><h3>Follow</h3><ul><li><a href="#" aria-label="Facebook">Facebook</a></li><li><a href="#" aria-label="Instagram">Instagram</a></li><li><a href="#" aria-label="YouTube">YouTube</a></li></ul></div>
+    <div><h3>Newsletter</h3><form class="news" id="newsForm"><input type="email" id="newsEmail" placeholder="you@example.com" aria-label="Email" required><button class="btn btn-copper" type="submit">Join</button></form><p id="newsMsg" style="font-size:.9rem"></p>
+      <p style="font-size:.9rem">Inquiries by <b>text message</b> only, please.</p></div>
+  </div>
+  <div class="copy">© <span id="yr"></span> SlammenSalmon.com · All rights reserved.</div>
+</footer>
+
+<nav class="tabbar" aria-label="Mobile">
+  <a href="index.html"><span>🏠</span>Home</a>
+  <a href="catch-log.html"><span>🎣</span>Catch Log</a>
+  <a href="gear.html"><span>🧥</span>Gear</a>
+  <a href="community.html"><span>👥</span>Community</a>
+  <a href="profile.html"><span>👤</span>Profile</a>
+</nav>
+
+<script src="js/main.js"></script><script src="js/catchlog.js"></script>
+</body>
+</html>

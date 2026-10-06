@@ -1,0 +1,3 @@
+server/.env
+server/bookings.json
+node_modules/
