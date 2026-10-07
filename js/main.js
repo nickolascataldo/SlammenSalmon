@@ -57,7 +57,8 @@
     var d = new Date(year, month, 1), diff = (weekday - d.getDay() + 7) % 7;
     return new Date(year, month, 1 + diff + (n - 1) * 7);
   }
-  function seasonFor(year) { return { start: nthWeekday(year, 8, 2, 2), end: nthWeekday(year, 9, 4, 3), opens: new Date(year, 7, 1) }; }
+  // Season: 2nd Tuesday of September to 3rd Thursday of October. Bookings open July 1 of that year.
+  function seasonFor(year) { return { start: nthWeekday(year, 8, 2, 2), end: nthWeekday(year, 9, 4, 3), opens: new Date(year, 6, 1) }; }
   function startOfDay(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
   function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
   function pretty(d) { return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }); }
@@ -70,7 +71,7 @@
   var alertForm = document.getElementById('alertForm'), sel = document.getElementById('tourDate');
 
   if (!isOpen) {
-    statusEl.innerHTML = '<span class="status-badge">Not Open for Scheduling Yet</span> <span>The ' + year + ' season (' + pretty(s.start).replace(/^\w+, /, '') + ' – ' + pretty(s.end).replace(/^\w+, /, '') + ') opens for reservations August 1.</span>';
+    statusEl.innerHTML = '<span class="status-badge">Not Open for Scheduling Yet</span> <span>The ' + year + ' season (' + pretty(s.start).replace(/^\w+, /, '') + ' – ' + pretty(s.end).replace(/^\w+, /, '') + ') opens for reservations on July 1, ' + year + '.</span>';
     fs.disabled = true; sel.disabled = true; document.getElementById('bookBtn').disabled = true; alertForm.hidden = false;
   } else {
     statusEl.innerHTML = '<span class="status-badge open">Now Booking</span> <span>' + year + ' season: ' + pretty(s.start).replace(/^\w+, /, '') + ' – ' + pretty(s.end).replace(/^\w+, /, '') + '</span>';

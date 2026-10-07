@@ -14,7 +14,7 @@ try {
 
 const env = process.env, ROOT = path.join(__dirname, '..'), DB = path.join(__dirname, 'bookings.json');
 const PORT = env.PORT || 3000;
-const GEAR = { provided: 'Needs rods/tackle provided', own: 'Bringing own gear', mix: 'Mix of own and provided gear' };
+const GEAR = { provided: "Using guide's Lamiglas rods, Daiwa reels and tackle", own: 'Bringing own gear', mix: "Mix of own gear and the guide's" };
 
 const readDb = () => { try { return JSON.parse(fs.readFileSync(DB, 'utf8')); } catch (e) { return { bookings: [], alerts: [], subscribers: [] }; } };
 const writeDb = d => fs.writeFileSync(DB, JSON.stringify(d, null, 2));
