@@ -63,15 +63,18 @@
   function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
   function pretty(d) { return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }); }
 
+  // No tours before the 2027 season. After that, the next season rolls over automatically each year.
+  var FIRST_SEASON = 2027;
   var today = startOfDay(new Date()), year = today.getFullYear(), s = seasonFor(year);
   if (today > s.end) { year++; s = seasonFor(year); }
+  if (year < FIRST_SEASON) { year = FIRST_SEASON; s = seasonFor(year); }
   var isOpen = today >= s.opens;
 
   var statusEl = document.getElementById('bookingStatus'), fs = document.getElementById('bookingFieldset');
   var alertForm = document.getElementById('alertForm'), sel = document.getElementById('tourDate');
 
   if (!isOpen) {
-    statusEl.innerHTML = '<span class="status-badge">Not Open for Scheduling Yet</span> <span>The ' + year + ' season (' + pretty(s.start).replace(/^\w+, /, '') + ' – ' + pretty(s.end).replace(/^\w+, /, '') + ') opens for reservations on July 1, ' + year + '.</span>';
+    statusEl.innerHTML = '<span class="status-badge">Not Open for Scheduling Yet</span> <span>We\'re not running tours until the ' + year + ' season (' + pretty(s.start).replace(/^\w+, /, '') + ' – ' + pretty(s.end).replace(/^\w+, /, '') + '). Booking opens <b>July 1, ' + year + '</b>.</span>';
     fs.disabled = true; sel.disabled = true; document.getElementById('bookBtn').disabled = true; alertForm.hidden = false;
   } else {
     statusEl.innerHTML = '<span class="status-badge open">Now Booking</span> <span>' + year + ' season: ' + pretty(s.start).replace(/^\w+, /, '') + ' – ' + pretty(s.end).replace(/^\w+, /, '') + '</span>';
@@ -96,6 +99,7 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var m = document.getElementById('bookMsg');
+    if (!isOpen) return show(m, 'Booking is not open yet. It opens July 1, ' + year + '.', false);
     var v = function (id) { return document.getElementById(id).value.trim(); };
     if (!v('tourDate') || !v('gName') || !v('gPhone') || !/.+@.+\..+/.test(v('gEmail'))) return show(m, 'Please choose a date and complete your name, phone and a valid email.', false);
     for (var i = 1; i <= 5; i++) if (!document.getElementById('c' + i).checked) return show(m, 'Please confirm all five acknowledgements before reserving.', false);

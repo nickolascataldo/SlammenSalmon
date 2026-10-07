@@ -196,3 +196,8 @@ input:disabled,select:disabled{background:#ece8de;cursor:not-allowed}
 .callout{margin-top:28px;background:#fffdf7;border:1px solid var(--line);border-left:5px solid var(--moss);padding:16px 20px}
 .callout h3{margin:0 0 .3em}.callout p{margin:0}
 .hint{font-size:.9rem;color:#6b5e50;margin:4px 0 0}
+
+/* Season announcement + closed booking */
+.announce{background:var(--copper);color:#fff;text-align:center;font-weight:600;padding:9px 16px;font-size:.95rem;letter-spacing:.02em}
+.announce b{text-decoration:underline;text-underline-offset:3px}
+#bookingFieldset:disabled{opacity:.45}

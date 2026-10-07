@@ -39,9 +39,17 @@ async function sendEmail(to, subject, text) { // Resend (https://resend.com); sw
 
 const prettyDate = iso => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 
+// No tours before the 2027 season. Season: 2nd Tuesday of September to 3rd Thursday of October; booking opens July 1.
+const FIRST_SEASON = 2027;
+const nthWeekday = (y, m, wd, n) => { const d = new Date(y, m, 1); return new Date(y, m, 1 + (wd - d.getDay() + 7) % 7 + (n - 1) * 7); };
+
 function validate(b) {
   const d = new Date(b.date + 'T12:00:00');
   if (isNaN(d) || ![2, 4].includes(d.getDay())) return 'Tours run Tuesdays and Thursdays only.';
+  const y = d.getFullYear();
+  if (y < FIRST_SEASON) return 'We are not running tours until the ' + FIRST_SEASON + ' season.';
+  if (Date.now() < new Date(y, 6, 1).getTime()) return 'Booking for the ' + y + ' season opens July 1, ' + y + '.';
+  if (d < nthWeekday(y, 8, 2, 2) || d > nthWeekday(y, 9, 4, 3)) return 'That date is outside the season (second Tuesday of September to third Thursday of October).';
   if (!b.name || !b.phone || !/.+@.+\..+/.test(b.email || '')) return 'Name, phone and valid email are required.';
   if (![1, 2].includes(Number(b.partySize))) return 'Party size must be 1 or 2.';
   const c = b.confirmations || {};
