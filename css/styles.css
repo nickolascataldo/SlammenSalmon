@@ -184,3 +184,15 @@ input:disabled,select:disabled{background:#ece8de;cursor:not-allowed}
 .tabbar svg{display:block;margin:0 auto 2px;width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tabbar a[aria-current="page"]{color:#ffb596}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* FAQ, callout, hints */
+.faq{max-width:820px;margin:28px auto 0;display:grid;gap:10px}
+.faq details{background:#fffdf7;border:1px solid var(--line);border-left:4px solid var(--copper);padding:0 18px}
+.faq summary{cursor:pointer;font-family:var(--font-head);font-weight:700;font-size:1.15rem;color:var(--pine);padding:14px 28px 14px 0;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--copper);line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0 0 16px}
+.callout{margin-top:28px;background:#fffdf7;border:1px solid var(--line);border-left:5px solid var(--moss);padding:16px 20px}
+.callout h3{margin:0 0 .3em}.callout p{margin:0}
+.hint{font-size:.9rem;color:#6b5e50;margin:4px 0 0}

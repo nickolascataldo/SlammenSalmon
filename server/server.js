@@ -56,14 +56,14 @@ async function handleBook(b) {
   const rec = {
     id: Date.now().toString(36), date: b.date, name: String(b.name).slice(0, 120), partySize: Number(b.partySize),
     phone: String(b.phone).slice(0, 40), email: String(b.email).slice(0, 160), gear: GEAR[b.gear] || GEAR.provided,
-    notes: String(b.notes || '').slice(0, 500), remindedAt: null
+    notes: String(b.notes || '').slice(0, 500), dietary: String(b.dietary || '').slice(0, 200), remindedAt: null
   };
   const db = readDb(); db.bookings.push(rec); writeDb(db);
 
   const results = await Promise.allSettled([
     // Owner notification. The destination number only ever comes from the environment.
     (async () => sendSms(need('NOTIFICATION_PHONE_NUMBER'),
-      `NEW BOOKING ${prettyDate(rec.date)}\n${rec.name}, party of ${rec.partySize}\n${rec.phone} / ${rec.email}\nGear: ${rec.gear}${rec.notes ? ' (' + rec.notes + ')' : ''}\nConfirmed: waiver, can swim, English speaker, gear rules, MI license`))(),
+      `NEW BOOKING ${prettyDate(rec.date)}\n${rec.name}, party of ${rec.partySize}\n${rec.phone} / ${rec.email}\nGear: ${rec.gear}${rec.notes ? ' (' + rec.notes + ')' : ''}\nDiet/allergies: ${rec.dietary || 'none given'}\nConfirmed: waiver, can swim, English speaker, gear rules, MI license`))(),
     sendEmail(rec.email, 'Your Slammen Salmon tour is booked: ' + prettyDate(rec.date),
       `Hi ${rec.name},\n\nYou're booked for a guided salmon drift boat tour on the Pere Marquette River on ${prettyDate(rec.date)}, 8:00 AM to 5:00 PM, starting at the Upper Branch access point in Branch, MI.\n\n` +
       `NO PAYMENT HAS BEEN COLLECTED and none is required online. The full $500 tour fee is paid in person at the start of the tour.\n\n` +

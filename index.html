@@ -97,6 +97,10 @@
       <div class="fact"><b>The float · about <span data-route-miles>3.3</span> river miles</b>Winding bends, deep gravel runs and log jams, rowed slowly so we can fish every good spot. Quiet water, fall color and prime holding water for king salmon.</div>
       <div class="fact"><b>B · Take-out</b>Lower Branch Bridge River Access, a back-in Forest Service site surrounded by private property. We wrap up around 5:00 PM.</div>
     </div>
+    <div class="callout">
+      <h3>Where to stay</h3>
+      <p>We push off at 8:00 AM, so most anglers arrive the night before. <b>Baldwin</b> (about 15 minutes east) and <b>Ludington</b> (about 25 minutes west, on Lake Michigan) both have motels, cabins, diners and coffee shops. Grab breakfast and coffee on your way in, because the river doesn't have a drive-through.</p>
+    </div>
   </div>
 </section>
 
@@ -131,7 +135,32 @@
   </div>
 </section>
 
-<section class="section" id="book">
+<section class="section" id="faq">
+  <div class="container">
+    <div class="center"><p class="eyebrow">Good to Know</p>
+    <h2>Questions people ask</h2></div>
+    <div class="faq">
+      <details><summary>Where do we meet in the morning?</summary>
+        <p>At the <b>Upper Branch Bridge River Access</b> in Branch Township at <b>8:00 AM</b>. It's a U.S. Forest Service site with a vault toilet. The <a href="https://www.fs.usda.gov/r09/huron-manistee/recreation/upper-branch-bridge-river-access" target="_blank" rel="noopener">Forest Service lists a day-use parking fee</a> there, so check the current amount. The map above shows the exact spot and has a button for directions.</p></details>
+      <details><summary>What if it rains?</summary>
+        <p>We fish rain or shine, and salmon don't mind a gray, drizzly day. We only reschedule for dangerous lightning or an unsafe, blown-out river. Bring good rain gear and warm layers, and see the <a href="gear.html">gear guide</a>.</p></details>
+      <details><summary>What's the bathroom situation?</summary>
+        <p>It's a long day on the water, and that's fine. Both the put-in and take-out Forest Service sites have vault toilets, and we'll make natural stops along the river whenever anyone needs one. Just tell your guide.</p></details>
+      <details><summary>Will you clean my fish?</summary>
+        <p>If you keep a bright, clean king, we'll help you get it ready at the ramp. Bring a cooler with ice for the ride home. We encourage catch-and-release to protect the run, but the choice is yours.</p></details>
+      <details><summary>Is tipping customary?</summary>
+        <p>Never expected, always appreciated.</p></details>
+      <details><summary>Do I need a fishing license?</summary>
+        <p>Yes, every angler needs a valid Michigan fishing license. Short-term all-species licenses are available, and you can buy one on your phone through the <a href="https://www.mdnr-elicense.com/" target="_blank" rel="noopener">Michigan DNR eLicense portal</a>. Please do it before the ramp, since cell service can be spotty.</p></details>
+      <details><summary>What about lunch and food allergies?</summary>
+        <p>A full lunch is included. Tell us about any dietary restrictions or food allergies when you book, so we pack something you can eat.</p></details>
+      <details><summary>Do I sign a waiver?</summary>
+        <p>Yes. You'll sign a paper liability waiver at the ramp before we push off. Tick the box when you book to show you understand.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="book">
   <div class="container">
     <div class="center"><p class="eyebrow">Reservations</p>
     <h2>Book a day on the river</h2></div>
@@ -163,13 +192,16 @@
         <select id="gGear"><option value="provided">Use the guide's Lamiglas rods, Daiwa reels and tackle</option><option value="own">I'll bring my own gear</option><option value="mix">A mix of both</option></select>
         <label for="gNotes">Gear notes / anything we should know</label>
         <textarea id="gNotes" rows="3"></textarea>
+        <label for="gDiet">Dietary restrictions or food allergies?</label>
+        <input type="text" id="gDiet" maxlength="200" placeholder="Vegetarian, gluten-free, peanut allergy… or leave blank">
+        <p class="hint">Lunch is on us. This helps us pack something everyone can eat.</p>
 
         <h3 style="margin-top:22px">Before you reserve</h3>
-        <label class="consent"><input type="checkbox" id="c1" required> I agree to the liability waiver and assumption of risk.</label>
+        <label class="consent"><input type="checkbox" id="c1" required> I agree to the liability waiver and assumption of risk. I understand I will sign a paper copy at the ramp before we push off.</label>
         <label class="consent"><input type="checkbox" id="c2" required> I confirm I and everyone in my party can swim.</label>
         <label class="consent"><input type="checkbox" id="c3" required> I confirm at least one person in my party speaks fluent English, for safety and guide instruction.</label>
         <label class="consent"><input type="checkbox" id="c4" required> I agree to the gear rules: I will bring my own waders, and cleats or studded soles are strictly prohibited.</label>
-        <label class="consent"><input type="checkbox" id="c5" required> Everyone in my party holds a valid Michigan fishing license.</label>
+        <label class="consent"><input type="checkbox" id="c5" required> Everyone in my party holds a valid Michigan fishing license. <a href="https://www.mdnr-elicense.com/" target="_blank" rel="noopener">Buy one on your phone at the Michigan DNR eLicense portal</a>; 24-hour and 72-hour all-species options are available.</label>
         <p><button class="btn btn-copper" type="submit" id="bookBtn">Reserve my day</button></p>
         <div class="form-msg" id="bookMsg" role="status"></div>
       </form>
@@ -183,7 +215,7 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div><a class="logo" href="index.html">Slammen<span>Salmon</span></a><p>A retired local's drift boat outings for fall Chinook on the Pere Marquette River, Branch, Michigan. Tuesdays and Thursdays, mid-September to mid-October.</p></div>
-    <div><h3>Quick links</h3><ul><li><a href="index.html#float">The Float</a></li><li><a href="about.html">About Your Guide</a></li><li><a href="gear.html">Gear Guide</a></li><li><a href="index.html#book">Book a Day</a></li></ul></div>
+    <div><h3>Quick links</h3><ul><li><a href="index.html#float">The Float</a></li><li><a href="about.html">About Your Guide</a></li><li><a href="gear.html">Gear Guide</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="index.html#book">Book a Day</a></li></ul></div>
     <div><h3>Fall run news</h3><form class="news" id="newsForm"><input type="email" id="newsEmail" placeholder="you@example.com" aria-label="Email" required><button class="btn btn-copper" type="submit">Join</button></form><p id="newsMsg" style="font-size:.9rem"></p>
       <p style="font-size:.9rem">Inquiries by <b>text message</b> only, please.</p></div>
   </div>

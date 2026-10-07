@@ -102,7 +102,7 @@
     var btn = document.getElementById('bookBtn'); btn.disabled = true;
     post('/book', {
       date: v('tourDate'), name: v('gName'), partySize: +v('gSize'), phone: v('gPhone'), email: v('gEmail'),
-      gear: v('gGear'), notes: v('gNotes'),
+      gear: v('gGear'), notes: v('gNotes'), dietary: v('gDiet'),
       confirmations: { waiver: true, swim: true, englishSpeaker: true, gearRules: true, michiganLicense: true }
     }).then(function (res) {
       show(m, 'Reserved for ' + pretty(new Date(v('tourDate') + 'T12:00:00')) + '. ' +
