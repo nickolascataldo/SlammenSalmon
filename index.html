@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -18,6 +19,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="index.html#float">The Float</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="gear.html">Gear Guide</a></li>
       <li><a class="nav-book" href="index.html#book">Book a Day</a></li>
     </ul>
@@ -29,7 +31,7 @@
     <div>
       <p class="eyebrow">Pere Marquette River · Branch, Michigan</p>
       <h1>A few good days on the river each fall.</h1>
-      <p>Come float the Pere Marquette with a retired local who loves this river. We row a drift boat through quiet, colorful water in search of fall Chinook salmon. It's a small, unhurried outing for two anglers, with lunch on us.</p>
+      <p>Come float the Pere Marquette with a retired local who has fished it for over 30 years. We drift a traditional wooden McKenzie boat through quiet, colorful water in search of fall Chinook salmon. It's a small, unhurried day for two anglers, with lunch on us.</p>
       <div class="hero-cta">
         <a class="btn btn-copper" href="#book">Book a Day</a>
         <a class="btn btn-secondary" href="#float">See the Float</a>
@@ -83,82 +85,30 @@
   <div class="container">
     <p class="eyebrow">The Float</p>
     <h2>Upper Branch to Lower Branch</h2>
-    <p class="lead">We put in at the <b>Upper Branch Access</b> and take out at the <b>Lower Branch Access</b>, both in Branch, Michigan. In between is a full day of quiet, tree-lined water on the Pere Marquette River.</p>
+    <p class="lead">We put in at the <b>Upper Branch Bridge Access</b> and take out at the <b>Lower Branch Bridge Access</b>, both in Branch Township, Michigan. The orange line below is the real river, traced from live map data.</p>
     <div class="map-wrap">
-      <svg viewBox="0 0 900 440" role="img" aria-labelledby="mapTitle mapDesc">
-        <title id="mapTitle">Illustrated route map of the float on the Pere Marquette River</title>
-        <desc id="mapDesc">A winding river from the Upper Branch Access put-in at the top left to the Lower Branch Access take-out at the bottom right, passing five numbered stops.</desc>
-        <defs>
-          <pattern id="contours" width="300" height="300" patternUnits="userSpaceOnUse">
-            <g fill="none" stroke="#b9a97f" stroke-opacity=".5" stroke-width="1.2">
-              <path d="M-10 80C60 30 130 110 200 70S280 20 320 60"/><path d="M-10 108C60 60 130 138 200 98S280 50 320 88"/>
-              <path d="M-10 220C70 180 140 260 210 220S280 190 320 230"/><path d="M-10 248C70 210 140 288 210 248S280 220 320 258"/>
-              <ellipse cx="240" cy="150" rx="46" ry="22"/><ellipse cx="240" cy="150" rx="28" ry="12"/>
-            </g>
-          </pattern>
-        </defs>
-        <rect width="900" height="440" fill="#efe6d2"/>
-        <rect width="900" height="440" fill="url(#contours)"/>
-        <!-- autumn tree dots -->
-        <g opacity=".85">
-          <circle cx="110" cy="190" r="9" fill="#c85a32"/><circle cx="135" cy="205" r="7" fill="#d9a441"/><circle cx="95" cy="215" r="6" fill="#4a5d3a"/>
-          <circle cx="300" cy="55" r="8" fill="#d9a441"/><circle cx="330" cy="40" r="6" fill="#c85a32"/><circle cx="270" cy="40" r="6" fill="#4a5d3a"/>
-          <circle cx="450" cy="230" r="9" fill="#4a5d3a"/><circle cx="480" cy="250" r="8" fill="#c85a32"/><circle cx="430" cy="255" r="6" fill="#d9a441"/>
-          <circle cx="560" cy="40" r="7" fill="#c85a32"/><circle cx="590" cy="60" r="8" fill="#4a5d3a"/><circle cx="535" cy="55" r="6" fill="#d9a441"/>
-          <circle cx="780" cy="190" r="9" fill="#d9a441"/><circle cx="810" cy="215" r="7" fill="#c85a32"/><circle cx="760" cy="225" r="7" fill="#4a5d3a"/>
-          <circle cx="600" cy="330" r="8" fill="#4a5d3a"/><circle cx="625" cy="360" r="7" fill="#c85a32"/><circle cx="570" cy="360" r="6" fill="#d9a441"/>
-          <circle cx="250" cy="300" r="9" fill="#c85a32"/><circle cx="280" cy="325" r="7" fill="#4a5d3a"/><circle cx="220" cy="330" r="6" fill="#d9a441"/>
-        </g>
-        <!-- river -->
-        <path d="M60 80C200 40 260 160 380 140S560 60 640 170S700 330 820 360" fill="none" stroke="#3E5C6E" stroke-width="26" stroke-linecap="round"/>
-        <path d="M60 80C200 40 260 160 380 140S560 60 640 170S700 330 820 360" fill="none" stroke="#7fa5ba" stroke-width="18" stroke-linecap="round"/>
-        <!-- flow ripples -->
-        <g fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"><path d="M150 82q6-4 12 0"/><path d="M300 120q6-4 12 0"/><path d="M450 118q6-4 12 0"/><path d="M590 120q6-4 12 0"/><path d="M690 245q6-4 12 0"/><path d="M770 340q6-4 12 0"/></g>
-        <!-- route line -->
-        <path d="M60 80C200 40 260 160 380 140S560 60 640 170S700 330 820 360" fill="none" stroke="#c85a32" stroke-width="3.5" stroke-dasharray="3 9" stroke-linecap="round"/>
-        <!-- log jam near stop 3 -->
-        <g stroke="#2b2118" stroke-width="4" stroke-linecap="round"><path d="M352 168l36-8"/><path d="M358 176l30-14"/><path d="M366 158l24 16"/></g>
-        <!-- stops -->
-        <g font-family="Zilla Slab,Georgia,serif" font-weight="700" font-size="17" text-anchor="middle" fill="#fff">
-          <circle cx="60" cy="80" r="17" fill="#c85a32" stroke="#fff" stroke-width="3"/><text x="60" y="86">1</text>
-          <circle cx="227" cy="102" r="15" fill="#1b382b" stroke="#fff" stroke-width="3"/><text x="227" y="108">2</text>
-          <circle cx="380" cy="140" r="15" fill="#1b382b" stroke="#fff" stroke-width="3"/><text x="380" y="146">3</text>
-          <circle cx="525" cy="106" r="15" fill="#1b382b" stroke="#fff" stroke-width="3"/><text x="525" y="112">4</text>
-          <circle cx="640" cy="170" r="15" fill="#1b382b" stroke="#fff" stroke-width="3"/><text x="640" y="176">5</text>
-          <circle cx="715" cy="295" r="15" fill="#1b382b" stroke="#fff" stroke-width="3"/><text x="715" y="301">6</text>
-          <circle cx="820" cy="360" r="17" fill="#c85a32" stroke="#fff" stroke-width="3"/><text x="820" y="366">7</text>
-        </g>
-        <g font-family="Zilla Slab,Georgia,serif" font-weight="700" font-size="16" fill="#1b382b">
-          <text x="60" y="124" text-anchor="start" dx="-20">PUT-IN</text><text x="60" y="142" text-anchor="start" dx="-20" font-size="13" font-weight="600">Upper Branch Access</text>
-          <text x="780" y="400" text-anchor="end" dx="40">TAKE-OUT</text><text x="780" y="418" text-anchor="end" dx="40" font-size="13" font-weight="600">Lower Branch Access</text>
-        </g>
-        <!-- compass -->
-        <g transform="translate(838 62)" font-family="Zilla Slab,Georgia,serif" font-weight="700"><circle r="30" fill="#fffdf7" stroke="#2b2118" stroke-width="1.5"/><path d="M0-24L7 4H-7z" fill="#c85a32"/><path d="M0 24L7-4H-7z" fill="#2b2118" opacity=".5"/><text y="-32" text-anchor="middle" font-size="15" fill="#2b2118">N</text></g>
-        <text x="20" y="428" font-family="Inter,sans-serif" font-size="12" fill="#6b5e50" font-style="italic">Illustrated sketch · not to scale</text>
-      </svg>
+      <div id="routeMap" class="route-map" role="region" aria-label="Interactive map of the float route on the Pere Marquette River"></div>
+      <button class="map-lock" id="mapLock" type="button" hidden>Tap to explore the map</button>
+      <noscript><p class="map-fallback">The interactive map needs JavaScript. <a href="https://www.google.com/maps/dir/?api=1&amp;origin=43.92861,-86.02028&amp;destination=43.93528,-86.05083">Open the route in Google Maps</a>.</p></noscript>
     </div>
-    <p class="map-note">An illustrated sketch of the float, not a survey map. Features shift with the water, but the spirit is the same. <a href="https://www.google.com/maps/search/?api=1&amp;query=Upper+Branch+Access+Pere+Marquette+River+Branch+Michigan" target="_blank" rel="noopener">See the Upper Branch access on a map</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Lower+Branch+Access+Pere+Marquette+River+Branch+Michigan" target="_blank" rel="noopener">Lower Branch access</a></p>
-    <ol class="milestones">
-      <li><span class="n end">1</span><b>Put-in, Upper Branch Access</b><br>We load the boat, say good morning to the river and push off at 8:00 AM.</li>
-      <li><span class="n">2</span><b>The first bend</b><br>Quiet, secluded water under a canopy of fall color. A good place to settle in.</li>
-      <li><span class="n">3</span><b>Log jam run</b><br>Fallen timber makes classic holding water. We drift it carefully and watch for a take.</li>
-      <li><span class="n">4</span><b>Gravel riffle</b><br>Moving water over clean gravel where salmon like to rest and run.</li>
-      <li><span class="n">5</span><b>Deep holding pool</b><br>The kind of slow, deep pool where king salmon stack up.</li>
-      <li><span class="n">6</span><b>Hardwood bend</b><br>Maples and birches in full color. Keep the camera handy.</li>
-      <li><span class="n end">7</span><b>Take-out, Lower Branch Access</b><br>We land the boat around 5:00 PM, tired and happy, with stories to tell.</li>
-    </ol>
+    <p class="map-note">Live map: switch between Map, Topo and Satellite at the top right. Click the map, then scroll to zoom. The route follows the river centerline from OpenStreetMap, and the actual drift shifts with the water. <a href="https://www.google.com/maps/dir/?api=1&amp;origin=43.92861,-86.02028&amp;destination=43.93528,-86.05083&amp;travelmode=driving" target="_blank" rel="noopener">Driving directions between the two access points</a></p>
+    <div class="grid-3 float-cards">
+      <div class="fact"><b>A · Put-in</b>Upper Branch Bridge River Access, a U.S. Forest Service site. We push off around 8:00 AM.</div>
+      <div class="fact"><b>The float · about <span data-route-miles>3.3</span> river miles</b>Winding bends, deep gravel runs and log jams, rowed slowly so we can fish every good spot. Quiet water, fall color and prime holding water for king salmon.</div>
+      <div class="fact"><b>B · Take-out</b>Lower Branch Bridge River Access, a back-in Forest Service site surrounded by private property. We wrap up around 5:00 PM.</div>
+    </div>
   </div>
 </section>
 
 <section class="section" id="guide">
   <div class="container two-col" style="align-items:center">
-    <figure class="frame" style="transform:rotate(-1.5deg)"><img src="images/guide-rowing.jpg" alt="Your guide at the oars of the drift boat on the Pere Marquette River" loading="lazy" style="aspect-ratio:4/5"><figcaption>Your guide, at the oars</figcaption></figure>
+    <figure class="frame" style="transform:rotate(-1.5deg)"><img src="images/guide-rowing.jpg" alt="Your guide at the oars of his wooden drift boat on the Pere Marquette River" loading="lazy" style="aspect-ratio:4/5"><figcaption>Your guide, at the oars</figcaption></figure>
     <div>
       <p class="eyebrow">Meet Your Guide</p>
-      <h2>A retired local, rowing for the fun of it</h2>
-      <p class="lead">This is a labor of love, not a business empire. Your guide rows the boat himself, knows this stretch of the Pere Marquette and is out here a few days each fall because it's the best place he knows to be.</p>
-      <p>Expect friendly conversation, honest advice and plenty of patience, whether you're a seasoned salmon angler or it's your very first drift boat day.</p>
-      <p><a class="btn btn-copper" href="#book">Book a Day with Your Guide</a></p>
+      <h2>Thirty years on his home water</h2>
+      <blockquote class="pull">For over 30 years, the winding bends, deep gravel runs, and log jams of the Pere Marquette River have been my home water. Now that I'm retired from the daily grind, I didn't want to step away from the river—I wanted to share it.</blockquote>
+      <p>Hear how he fishes, why he rows a wooden McKenzie drift boat, and what to expect whether it's your first rod or your fiftieth king.</p>
+      <p><a class="btn btn-copper" href="about.html">Get to Know Your Guide</a> <a class="btn btn-secondary" href="#book">Book a Day</a></p>
     </div>
   </div>
 </section>
@@ -233,7 +183,7 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div><a class="logo" href="index.html">Slammen<span>Salmon</span></a><p>A retired local's drift boat outings for fall Chinook on the Pere Marquette River, Branch, Michigan. Tuesdays and Thursdays, mid-September to mid-October.</p></div>
-    <div><h3>Quick links</h3><ul><li><a href="index.html#float">The Float</a></li><li><a href="gear.html">Gear Guide</a></li><li><a href="index.html#book">Book a Day</a></li></ul></div>
+    <div><h3>Quick links</h3><ul><li><a href="index.html#float">The Float</a></li><li><a href="about.html">About Your Guide</a></li><li><a href="gear.html">Gear Guide</a></li><li><a href="index.html#book">Book a Day</a></li></ul></div>
     <div><h3>Fall run news</h3><form class="news" id="newsForm"><input type="email" id="newsEmail" placeholder="you@example.com" aria-label="Email" required><button class="btn btn-copper" type="submit">Join</button></form><p id="newsMsg" style="font-size:.9rem"></p>
       <p style="font-size:.9rem">Inquiries by <b>text message</b> only, please.</p></div>
   </div>
@@ -243,6 +193,7 @@
 <nav class="tabbar" aria-label="Mobile">
   <a href="index.html" aria-current="page"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>Home</a>
   <a href="index.html#float"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg>Float</a>
+  <a href="about.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>About</a>
   <a href="gear.html"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6"/></svg>Gear</a>
   <a href="index.html#book"><svg viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>Book</a>
 </nav>
@@ -253,6 +204,9 @@
   <img id="lbImg" alt=""><p id="lbCap"></p>
   <button class="lb-btn lb-next" id="lbNext" aria-label="Next">›</button>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="js/route.js"></script>
+<script src="js/map.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
